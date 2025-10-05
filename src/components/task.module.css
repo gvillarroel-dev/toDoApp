@@ -1,0 +1,83 @@
+@import url("../app.module.css");
+
+.taskItem {
+  width: 100%;
+  padding: 1.6rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.taskItem:last-child {
+  border: none;
+}
+
+.taskItem span {
+  min-width: 75%;
+  font-size: clamp(1rem, 5vw, 1.2rem);
+  color: var(--navy-300);
+  text-transform: capitalize;
+  overflow-wrap: break-word;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+}
+
+.btnContainer button {
+  width: clamp(10px, 25vw, 30px);
+  height: 30px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  color: var(--brown-600);
+  background: var(--navy-300);
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnContainer button:first-child {
+  background: var(--brown-600);
+  color: var(--navy-300);
+}
+
+.btnContainer button:hover {
+  color: var(--navy-300);
+  border: 2px solid var(--brown-600);
+  background: transparent;
+}
+
+.taskDone {
+  text-decoration: line-through;
+  text-decoration-thickness: 2.5px;
+}
+
+/* ==================== MEDIA QUERIES ====================*/
+@media (max-width: 500px) {
+  .taskItem {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .taskItem span {
+    width: 90%;
+  }
+
+  .btnContainer {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btnContainer button {
+    width: 40%;
+    border-radius: 9px;
+  }
+}
